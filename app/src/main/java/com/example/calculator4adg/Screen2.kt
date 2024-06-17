@@ -111,7 +111,7 @@ fun Screen2(navController: NavHostController) {
                         context.createToastMessage("Enter a valid number only", 0)
                     }
                 },
-                label = { Text(text = "Enter Value", fontSize = 15.sp, color = Color.Black) })
+                label = { Text(text = "Enter Value in $opt2", fontSize = 15.sp, color = Color.Black) })
         }
             Card(
                 modifier = Modifier
