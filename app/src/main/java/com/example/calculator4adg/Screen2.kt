@@ -150,7 +150,7 @@ fun Screen2(navController: NavHostController) {
         Spacer(modifier = Modifier.weight(1F))
         Row(modifier = Modifier.fillMaxWidth(),horizontalArrangement = Arrangement.Center) {
             Spacer(modifier = Modifier.weight(1F))
-            CreateButton(stringText = "Switch", onClick = {navController.navigate(Screen1.route)}, textSize = 30)
+            CreateButton(stringText = "Switch", onClick = {navController.popBackStack()}, textSize = 30)
         }
     }
 }

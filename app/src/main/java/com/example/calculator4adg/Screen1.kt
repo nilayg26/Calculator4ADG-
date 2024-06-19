@@ -59,10 +59,11 @@ fun Screen1(navController: NavHostController) {
       .fillMaxSize()
       .verticalScroll(state)
       , verticalArrangement = Arrangement.Center) {
-      DisplayScreen(result = result)
+
       Card(modifier = Modifier
          .padding(10.dp)
          .fillMaxWidth(), elevation = CardDefaults.cardElevation(16.dp),colors = CardDefaults.cardColors(containerColor = Background)) {
+         DisplayScreen(result = result)
          var i=9
          rows.forEach{
             row->
