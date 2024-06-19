@@ -37,9 +37,6 @@ fun Screen1(navController: NavHostController) {
    var optResult by remember {
       mutableDoubleStateOf(0.toDouble())
    }
-  var buttonIsClicked by remember{
-     mutableStateOf(false)
-   }
    var result by remember {
       mutableDoubleStateOf(0.toDouble())
    }

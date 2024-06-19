@@ -44,8 +44,8 @@ fun Screen2(navController: NavHostController) {
     val context= LocalContext.current
     val state= rememberScrollState()
     val length= mutableListOf("meter","inches","feet")
-    val mass= mutableListOf<String>("grams","pound")
-    val time= mutableListOf<String>("seconds","hour","minutes")
+    val mass= mutableListOf("grams","pound")
+    val time= mutableListOf("seconds","hour","minutes")
     val first= mutableListOf("Length","Mass","Time")
     val second= mutableListOf(length,mass,time)
     var index1 by remember {
