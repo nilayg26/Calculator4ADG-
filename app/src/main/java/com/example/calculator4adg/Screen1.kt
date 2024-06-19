@@ -46,10 +46,10 @@ fun Screen1(navController: NavHostController) {
    var index by remember {
       mutableIntStateOf(1)
    }
-   var dot by remember {
+   val dot by remember {
       mutableStateOf(false)
    }
-   var history =remember {mutableListOf(0.0)}
+   val history =remember {mutableListOf(0.0)}
    val state= rememberScrollState()
    Column(modifier = Modifier
       .background(Background)
@@ -93,10 +93,9 @@ fun Screen1(navController: NavHostController) {
             CreateButton(stringText = "x", onClick = {optResult=getOptResult(result,optResult,index,context);result=0.toDouble();index=3})
          }
          Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Absolute.SpaceEvenly) {
-            //CreateButton(stringText = ".", onClick = {dot=true})
-            CreateButton(stringText = "↑", onClick ={result=moveUp(history,result)})
+            CreateButton(stringText = "↑", onClick ={result=moveUp(history,result);optResult=0.0})
             CreateButton(stringText = "AC",onClick ={result=0.0;optResult=0.0;index=1;history.clear()},shape = 20, color = ACcolor)
-            CreateButton(stringText = "↓", onClick ={result=moveDown(history,result)})
+            CreateButton(stringText = "↓", onClick ={result=moveDown(history,result);optResult=0.0})
 
          }
 
@@ -135,7 +134,7 @@ private fun moveDown(history:MutableList<Double>,result: Double):Double{
 }
 private fun moveUp(history:MutableList<Double>,result: Double):Double{
    val index= history.indexOf(result)
-   val indexU=index+1
+   val indexU=(index+1)
    if(indexU>=history.size){
       return result
    }
